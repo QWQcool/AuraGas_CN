@@ -10,6 +10,7 @@
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class IEnemyInterface;
 
 /**
  * AuraPlayerController - 玩家控制器类
@@ -29,7 +30,7 @@ class AURAGAS_API AAuraPlayerController : public APlayerController
 public:
 	// 构造函数
 	AAuraPlayerController();
-	
+	virtual void PlayerTick(float DeltaTime) override;
 protected:
 	// 重写BeginPlay：在Actor开始游戏时调用，用于初始化逻辑
 	virtual void BeginPlay() override;
@@ -52,5 +53,7 @@ private:
 	
 	void Move(const FInputActionValue& InputActionValue);
 
-	
+	void CursorTrace();
+	IEnemyInterface* LastActor;
+	IEnemyInterface* ThisActor;
 };

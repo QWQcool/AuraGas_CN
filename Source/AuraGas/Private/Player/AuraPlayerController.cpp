@@ -4,6 +4,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "InputActionValue.h"
+#include "Interaction/EnemyInterface.h"
 
 // 构造函数：在对象创建时调用
 AAuraPlayerController::AAuraPlayerController()
@@ -12,6 +13,70 @@ AAuraPlayerController::AAuraPlayerController()
 	// 在多人游戏中，这个设置确保玩家控制器可以在客户端之间同步
 	// 服务器上的变化会自动复制到所有客户端
 	bReplicates = true;
+}
+
+void AAuraPlayerController::PlayerTick(float DeltaTime)
+{
+	Super::PlayerTick(DeltaTime);
+	CursorTrace();
+}
+
+void AAuraPlayerController::CursorTrace()
+{
+	FHitResult CursorHit;
+	GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
+	if (!CursorHit.bBlockingHit)return;
+
+	LastActor = ThisActor;
+	ThisActor = Cast<IEnemyInterface>(CursorHit.GetActor());
+
+	/**
+	 * Line trace from cursor. There are several scanarios:
+	 * A. LastActor is nullptr && ThisActor is nullptr
+	 *    - Do nothing
+	 * B. LastActor is nullptr && ThisActor is not nullptr
+	 *    - Highlight ThisActor
+	 * C. LastActor is not nullptr && ThisActor is nullptr
+	 *    - Remove highlight from LastActor
+	 * D. LastActor is not nullptr && ThisActor is not nullptr, but LastActor != ThisActor
+	 *    - Remove highlight from LastActor
+	 *    - Highlight ThisActor
+	 * E. LastActor is not nullptr && ThisActor is not nullptr, and LastActor == ThisActor
+	 *    - Do nothing
+	 */
+
+	if (LastActor == nullptr)
+	{
+		if (ThisActor != nullptr)
+		{
+			//Case B
+			ThisActor->HighlightActor();
+		}
+		else
+		{
+			//Case A
+			//Do nothing
+		}
+	}
+	else
+	{
+		if (ThisActor == nullptr)
+		{
+			//Case C
+			LastActor->UnHighlightActor();
+		}
+		else if (LastActor != ThisActor)
+		{
+			//Case D
+			LastActor->UnHighlightActor();
+			ThisActor->HighlightActor();
+		}
+		else if (LastActor == ThisActor)
+		{
+			//Case E
+			//Do nothing
+		}
+	}
 }
 
 // BeginPlay：在Actor开始游戏时调用，用于初始化逻辑
