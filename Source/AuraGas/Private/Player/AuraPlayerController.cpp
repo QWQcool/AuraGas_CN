@@ -9,10 +9,12 @@
 // 构造函数：在对象创建时调用
 AAuraPlayerController::AAuraPlayerController()
 {
-	// bReplicates = true：启用网络复制
 	// 在多人游戏中，这个设置确保玩家控制器可以在客户端之间同步
 	// 服务器上的变化会自动复制到所有客户端
 	bReplicates = true;
+	
+	LastActor = nullptr;
+	ThisActor = nullptr;
 }
 
 void AAuraPlayerController::PlayerTick(float DeltaTime)
