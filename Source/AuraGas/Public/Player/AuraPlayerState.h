@@ -11,7 +11,7 @@ class UAbilitySystemComponent;
 class UAttributeSet;
 
 /**
- * Player state for Aura game
+ * Player state for Aura game 
  */
 UCLASS()
 class AURAGAS_API AAuraPlayerState : public APlayerState, public IAbilitySystemInterface
