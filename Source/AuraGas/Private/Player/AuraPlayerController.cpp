@@ -13,7 +13,8 @@ AAuraPlayerController::AAuraPlayerController()
 	// 服务器上的变化会自动复制到所有客户端
 	bReplicates = true;
 	
-	// TWeakObjectPtr默认构造为空，无需显式初始化
+	LastActor = nullptr;
+	ThisActor = nullptr;
 }
 
 void AAuraPlayerController::PlayerTick(float DeltaTime)
@@ -29,33 +30,32 @@ void AAuraPlayerController::CursorTrace()
 	if (!CursorHit.bBlockingHit)return;
 
 	LastActor = ThisActor;
-	ThisActor = Cast<AActor>(CursorHit.GetActor());
+	ThisActor = CursorHit.GetActor();
+
+	IEnemyInterface* LastEnemyInterface = Cast<IEnemyInterface>(LastActor);
+	IEnemyInterface* ThisEnemyInterface = Cast<IEnemyInterface>(ThisActor);
 
 	/**
 	 * Line trace from cursor. There are several scanarios:
-	 * A. LastActor is invalid && ThisActor is invalid
+	 * A. LastActor is nullptr && ThisActor is nullptr
 	 *    - Do nothing
-	 * B. LastActor is invalid && ThisActor is valid
+	 * B. LastActor is nullptr && ThisActor is not nullptr
 	 *    - Highlight ThisActor
-	 * C. LastActor is valid && ThisActor is invalid
+	 * C. LastActor is not nullptr && ThisActor is nullptr
 	 *    - Remove highlight from LastActor
-	 * D. LastActor is valid && ThisActor is valid, but LastActor != ThisActor
+	 * D. LastActor is not nullptr && ThisActor is not nullptr, but LastActor != ThisActor
 	 *    - Remove highlight from LastActor
 	 *    - Highlight ThisActor
-	 * E. LastActor is valid && ThisActor is valid, and LastActor == ThisActor
+	 * E. LastActor is not nullptr && ThisActor is not nullptr, and LastActor == ThisActor
 	 *    - Do nothing
 	 */
 
-	// 获取接口指针用于调用接口方法
-	IEnemyInterface* LastInterface = LastActor.IsValid() ? Cast<IEnemyInterface>(LastActor.Get()) : nullptr;
-	IEnemyInterface* ThisInterface = ThisActor.IsValid() ? Cast<IEnemyInterface>(ThisActor.Get()) : nullptr;
-
-	if (!LastActor.IsValid())
+	if (LastActor == nullptr)
 	{
-		if (ThisActor.IsValid() && ThisInterface)
+		if (ThisActor != nullptr && ThisEnemyInterface != nullptr)
 		{
 			//Case B
-			ThisInterface->HighlightActor();
+			ThisEnemyInterface->HighlightActor();
 		}
 		else
 		{
@@ -65,18 +65,27 @@ void AAuraPlayerController::CursorTrace()
 	}
 	else
 	{
-		if (!ThisActor.IsValid() && LastInterface)
+		if (ThisActor == nullptr)
 		{
 			//Case C
-			LastInterface->UnHighlightActor();
+			if (LastEnemyInterface != nullptr)
+			{
+				LastEnemyInterface->UnHighlightActor();
+			}
 		}
-		else if (ThisActor.IsValid() && LastActor != ThisActor)
+		else if (LastActor != ThisActor)
 		{
 			//Case D
-			if (LastInterface) LastInterface->UnHighlightActor();
-			if (ThisInterface) ThisInterface->HighlightActor();
+			if (LastEnemyInterface != nullptr)
+			{
+				LastEnemyInterface->UnHighlightActor();
+			}
+			if (ThisEnemyInterface != nullptr)
+			{
+				ThisEnemyInterface->HighlightActor();
+			}
 		}
-		else if (ThisActor.IsValid() && LastActor == ThisActor)
+		else if (LastActor == ThisActor)
 		{
 			//Case E
 			//Do nothing
@@ -99,14 +108,12 @@ void AAuraPlayerController::BeginPlay()
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 	
 	// 再次检查子系统是否有效
-	if (Subsystem == nullptr)
-	{
-		// 添加输入映射上下文到子系统
-		// AuraContext：包含按键到游戏动作的映射定义
-		// 0：优先级，数值越小优先级越高（0为最高优先级）
-		Subsystem->AddMappingContext(AuraContext, 0);
-	}
+	check(Subsystem);
 	
+	// 添加输入映射上下文到子系统
+	// AuraContext：包含按键到游戏动作的映射定义
+	// 0：优先级，数值越小优先级越高（0为最高优先级）
+	Subsystem->AddMappingContext(AuraContext, 0);
 	
 	// 显示鼠标光标
 	bShowMouseCursor = true;

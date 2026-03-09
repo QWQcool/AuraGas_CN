@@ -40,7 +40,7 @@ private:
 	TSubclassOf<UAuraUserWidget> OverlayWidgetClass;
 
 	// 覆盖层控件控制器实例
-	UPROPERTY(Category = "Widgets")
+	UPROPERTY(EditAnywhere, Category = "Widgets")
 	TObjectPtr<UOverlayWidgetController> OverlayWidgetController;
 
 	// 覆盖层控件控制器的蓝图类引用

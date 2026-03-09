@@ -54,6 +54,6 @@ private:
 	void Move(const FInputActionValue& InputActionValue);
 
 	void CursorTrace();
-	TWeakObjectPtr<AActor> LastActor;
-	TWeakObjectPtr<AActor> ThisActor;
+	TObjectPtr<AActor> LastActor;
+	TObjectPtr<AActor> ThisActor;
 };

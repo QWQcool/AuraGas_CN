@@ -13,7 +13,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMaxHealthChangedSignature, float,
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable, BlueprintType)
 class AURAGAS_API UOverlayWidgetController : public UAuraWidgetController
 {
 	GENERATED_BODY()

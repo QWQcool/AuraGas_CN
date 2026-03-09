@@ -3,7 +3,7 @@
 #include "UI/HUD/AuraHUD.h"
 
 // 实际的头文件包含（在源文件中进行）
-#include "AbilitySystemComponent.h"           // 能力系统组件实现
+#include "AbilitySystemComponent.h"           // 能力系统组件实现   
 #include "AttributeSet.h"                     // 属性集实现
 #include "UI/WidgetController/OverlayWidgetController.h"  // 覆盖层控件控制器实现
 #include "UI/WidgetController/AuraWidgetController.h"     // 基础控件控制器实现
@@ -42,6 +42,7 @@ void AAuraHUD::InitOverlay(APlayerController* PlayerController, APlayerState* Pl
     
     // 设置控件与控制器的关联
     OverlayWidget->SetWidgetController(WidgetController);
+    WidgetController->BroadcastInitialValues();
     
     // 将控件添加到视口
     Widget->AddToViewport();
