@@ -5,7 +5,11 @@
       <list>
         <Conversation>
           <option name="createTime" value="1773220942319" />
+          <option name="hasMoreRemoteMessages" value="false" />
           <option name="id" value="019cdc3451ef72698b38348d6def920e" />
+          <option name="nextBeforeCursor" value="" />
+          <option name="remoteOldestRequestAt" value="2026-03-11 17:48:38" />
+          <option name="storageSource" value="REMOTE" />
           <option name="title" value="AuraPlayerController断言失败" />
           <option name="turns">
             <list>
@@ -94,7 +98,6 @@
                 </option>
                 <option name="answer" value="" />
                 <option name="chatMode" value="AGENT" />
-                <option name="chatResource" value="user" />
                 <option name="codeReferences">
                   <list>
                     <CodeReferencesBean>
