@@ -5,7 +5,9 @@
       <list>
         <Conversation>
           <option name="createTime" value="1772068824098" />
+          <option name="hasMoreRemoteMessages" value="false" />
           <option name="id" value="019c978864227d419919f26c11f3c286" />
+          <option name="nextBeforeCursor" value="" />
           <option name="updateTime" value="1772068824098" />
         </Conversation>
       </list>

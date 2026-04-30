@@ -135,6 +135,7 @@
                   </map>
                 </option>
                 <option name="inputToken" value="47150" />
+                <option name="latestTotalToken" value="17196" />
                 <option name="messageId" value="019cdc4c5eed764bbaaf49639dddb0d1" />
                 <option name="model" value="default" />
                 <option name="outputToken" value="1332" />
@@ -150,9 +151,101 @@
                   <list />
                 </option>
               </Turn>
+              <Turn>
+                <option name="agent" value="" />
+                <option name="aguiRpcList">
+                  <list>
+                    <option value="{&quot;type&quot;:&quot;RUN_STARTED&quot;,&quot;timestamp&quot;:1777538125,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;threadId&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;runId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_START&quot;,&quot;timestamp&quot;:1777538125,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;,&quot;name&quot;:&quot;task_planning&quot;,&quot;ch_name&quot;:&quot;任务规划中&quot;,&quot;display_name&quot;:&quot;任务规划中&quot;,&quot;render_type&quot;:&quot;None&quot;,&quot;default_show&quot;:false,&quot;need_result&quot;:false,&quot;loading_display_type&quot;:&quot;point&quot;},&quot;toolCallId&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;,&quot;toolCallName&quot;:&quot;task_planning&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_END&quot;,&quot;timestamp&quot;:1777538126,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;},&quot;toolCallId&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_RESULT&quot;,&quot;timestamp&quot;:1777538126,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;,&quot;display_name&quot;:&quot;任务规划完成&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;toolCallId&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;,&quot;content&quot;:&quot;&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;CUSTOM&quot;,&quot;timestamp&quot;:1777538126,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;type&quot;:&quot;remove-tool&quot;,&quot;tool_call_id&quot;:&quot;a6711b3e-52c1-4bdf-9386-c861aa52dec9&quot;},&quot;name&quot;:&quot;remove-tool&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;STEP_STARTED&quot;,&quot;timestamp&quot;:1777538126,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;step_name&quot;:&quot;call_llm&quot;},&quot;stepName&quot;:&quot;call_llm&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_START&quot;,&quot;timestamp&quot;:1777538130,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;}}" />
+                    <option value="{&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;content&quot;:&quot;\n用户遇到了一个UnrealHeaderTool错误，提示\&quot;Invalid BlueprintType enum base - currently only uint8 supported\&quot;。这个错误出现在[AuraEffectActor.h](C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h)文件中的枚举定义。\n\n从提供的文件内容可以看到，当前的枚举定义使用了`enum class`语法，但Unreal Engine的BlueprintType枚举需要基于uint8类型。我需要修改这个枚举定义，将其改为基于uint8的枚举。\n\n让我先查看一下完整的文件内容，确认当前的枚举定义，然后进行修改。\n&quot;},&quot;timestamp&quot;:1777538130,&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_CONTENT&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_END&quot;,&quot;timestamp&quot;:1777538136,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;}}" />
+                    <option value="{&quot;type&quot;:&quot;TEXT_MESSAGE_START&quot;,&quot;timestamp&quot;:1777538136,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;role&quot;:&quot;assistant&quot;}" />
+                    <option value="{&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;content&quot;:&quot;我看到了你遇到的UnrealHeaderTool错误。这个错误是因为Unreal Engine的BlueprintType枚举必须基于uint8类型，而当前的枚举定义使用了默认的底层类型。\n\n我将修改[AuraEffectActor.h](C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h)文件中的枚举定义，将其改为基于uint8的正确格式。\n\n&quot;},&quot;timestamp&quot;:1777538136,&quot;type&quot;:&quot;TEXT_MESSAGE_CONTENT&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TEXT_MESSAGE_END&quot;,&quot;timestamp&quot;:1777538138,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_START&quot;,&quot;timestamp&quot;:1777538138,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;,&quot;name&quot;:&quot;replace_in_file&quot;,&quot;ch_name&quot;:&quot;编辑文件&quot;,&quot;display_name&quot;:&quot;编辑文件中&quot;,&quot;render_type&quot;:&quot;CodeReplace&quot;,&quot;default_show&quot;:false,&quot;need_result&quot;:true},&quot;toolCallId&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;,&quot;toolCallName&quot;:&quot;replace_in_file&quot;}" />
+                    <option value="{&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;,&quot;document&quot;:{&quot;file_path&quot;:&quot;C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h&quot;,&quot;sub_content&quot;:&quot;AuraEffectActor.h&quot;,&quot;sub_content_event&quot;:&quot;open_editor&quot;,&quot;sub_content_event_value&quot;:&quot;C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h&quot;,&quot;sub_content_tip&quot;:&quot;C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h&quot;,&quot;old_string&quot;:&quot;UENUM(BlueprintType)\nenum class EEffectApplicationPolicy\n{\n\tApplyOnOverlap,\n\tApplyOnEndOverlap,\n\tDoNotApply\n};&quot;,&quot;new_string&quot;:&quot;UENUM(BlueprintType)\nenum class EEffectApplicationPolicy : uint8\n{\n\tApplyOnOverlap,\n\tApplyOnEndOverlap,\n\tDoNotApply\n};&quot;,&quot;apply_mode&quot;:&quot;apply_only&quot;}},&quot;timestamp&quot;:1777538138,&quot;type&quot;:&quot;TOOL_CALL_ARGS&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_END&quot;,&quot;timestamp&quot;:1777538140,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;},&quot;toolCallId&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_RESULT&quot;,&quot;timestamp&quot;:1777538141,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;,&quot;result&quot;:{&quot;commit_id&quot;:[&quot;04a6d84d58f59ddefcea75c926a31936f695171d&quot;,&quot;ca8e7995eca66ef5c5b293c4cf26fbd427464109&quot;],&quot;full_content&quot;:&quot;*File replaced success*&quot;},&quot;display_name&quot;:&quot;编辑文件&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;toolCallId&quot;:&quot;call_e3561950-690d-4629-b563-5a37043c6d1b&quot;,&quot;content&quot;:&quot;*File replaced success*&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;STEP_FINISHED&quot;,&quot;timestamp&quot;:1777538141,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;step_name&quot;:&quot;call_llm&quot;,&quot;token_usage&quot;:{&quot;completion_tokens&quot;:370,&quot;prompt_tokens&quot;:12932,&quot;total_tokens&quot;:13302,&quot;completion_tokens_details&quot;:{&quot;accepted_prediction_tokens&quot;:null,&quot;audio_tokens&quot;:null,&quot;reasoning_tokens&quot;:0,&quot;rejected_prediction_tokens&quot;:null},&quot;prompt_tokens_details&quot;:null}},&quot;stepName&quot;:&quot;call_llm&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;STEP_STARTED&quot;,&quot;timestamp&quot;:1777538141,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;step_name&quot;:&quot;call_llm&quot;},&quot;stepName&quot;:&quot;call_llm&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_START&quot;,&quot;timestamp&quot;:1777538146,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;}}" />
+                    <option value="{&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;content&quot;:&quot;\n我已经成功修复了枚举定义的问题，将`enum class EEffectApplicationPolicy`改为`enum class EEffectApplicationPolicy : uint8`，这样就能满足UnrealHeaderTool的要求，因为BlueprintType枚举必须基于uint8类型。\n\n现在让我使用attempt_completion工具来总结任务的完成情况。\n&quot;},&quot;timestamp&quot;:1777538146,&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_CONTENT&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;THINKING_TEXT_MESSAGE_END&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;}}" />
+                    <option value="{&quot;type&quot;:&quot;TEXT_MESSAGE_START&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;role&quot;:&quot;assistant&quot;}" />
+                    <option value="{&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;content&quot;:&quot;我已经成功修复了[AuraEffectActor.h](C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h)文件中的枚举定义错误。将`enum class EEffectApplicationPolicy`修改为`enum class EEffectApplicationPolicy : uint8`，这样就满足了Unreal Engine对BlueprintType枚举必须基于uint8类型的要求，解决了UnrealHeaderTool的错误。\n\n&quot;},&quot;timestamp&quot;:1777538150,&quot;type&quot;:&quot;TEXT_MESSAGE_CONTENT&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TEXT_MESSAGE_END&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_START&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;,&quot;name&quot;:&quot;attempt_completion&quot;,&quot;ch_name&quot;:&quot;总结&quot;,&quot;display_name&quot;:&quot;总结中&quot;,&quot;render_type&quot;:&quot;MarkdownPreview&quot;,&quot;default_show&quot;:true,&quot;need_result&quot;:false},&quot;toolCallId&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;,&quot;toolCallName&quot;:&quot;attempt_completion&quot;}" />
+                    <option value="{&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;,&quot;document&quot;:{&quot;content&quot;:&quot;已成功修复AuraEffectActor.h文件中的枚举定义，将enum class EEffectApplicationPolicy改为基于uint8类型，解决了Invalid BlueprintType enum base错误&quot;,&quot;task_status&quot;:&quot;&quot;}},&quot;timestamp&quot;:1777538150,&quot;type&quot;:&quot;TOOL_CALL_ARGS&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_END&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;},&quot;toolCallId&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;TOOL_CALL_RESULT&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;tool_call_id&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;,&quot;result&quot;:{},&quot;display_name&quot;:&quot;总结&quot;},&quot;messageId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;toolCallId&quot;:&quot;call_7bd62d6b-4ec9-4d0c-ba70-33a2f102cd4a&quot;,&quot;content&quot;:&quot;&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;STEP_FINISHED&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;step_name&quot;:&quot;call_llm&quot;,&quot;token_usage&quot;:{&quot;completion_tokens&quot;:221,&quot;prompt_tokens&quot;:13390,&quot;total_tokens&quot;:13611,&quot;completion_tokens_details&quot;:{&quot;accepted_prediction_tokens&quot;:null,&quot;audio_tokens&quot;:null,&quot;reasoning_tokens&quot;:0,&quot;rejected_prediction_tokens&quot;:null},&quot;prompt_tokens_details&quot;:null}},&quot;stepName&quot;:&quot;call_llm&quot;}" />
+                    <option value="{&quot;type&quot;:&quot;RUN_FINISHED&quot;,&quot;timestamp&quot;:1777538150,&quot;rawEvent&quot;:{&quot;message_id&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;,&quot;conversation_id&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;},&quot;threadId&quot;:&quot;019cdc3451ef72698b38348d6def920e&quot;,&quot;runId&quot;:&quot;019ddd874de370b481141d91c0ddbeb9&quot;}" />
+                  </list>
+                </option>
+                <option name="answer" value="" />
+                <option name="chatMode" value="AGENT" />
+                <option name="codeReferences">
+                  <list>
+                    <CodeReferencesBean>
+                      <option name="content" value="" />
+                      <option name="filename" value="AuraEffectActor.h" />
+                      <option name="language" value="cpp" />
+                      <option name="range">
+                        <CommitRange>
+                          <option name="dontDisplayRange" value="true" />
+                          <option name="dontSelectByRange" value="true" />
+                          <option name="end">
+                            <Position />
+                          </option>
+                          <option name="start">
+                            <Position />
+                          </option>
+                        </CommitRange>
+                      </option>
+                      <option name="type" value="full_file" />
+                      <option name="url" value="file:///C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h" />
+                    </CodeReferencesBean>
+                  </list>
+                </option>
+                <option name="command" value="normal" />
+                <option name="commitId">
+                  <list>
+                    <option value="04a6d84d58f59ddefcea75c926a31936f695171d" />
+                    <option value="ca8e7995eca66ef5c5b293c4cf26fbd427464109" />
+                  </list>
+                </option>
+                <option name="conversationId" value="019cdc3451ef72698b38348d6def920e" />
+                <option name="historyDocumentMap">
+                  <map>
+                    <entry key="file:///C:/UE/AuraGas/Source/AuraGas/Public/Actor/AuraEffectActor.h" value="// Copyright LCC Personal&#10;&#10;#pragma once&#10;&#10;#include &quot;CoreMinimal.h&quot;&#10;#include &quot;GameFramework/Actor.h&quot;&#10;&#10;#include &quot;AuraEffectActor.generated.h&quot;&#10;&#10;&#10;UCLASS()&#10;class AURAGAS_API AAuraEffectActor : public AActor&#10;{&#10;&#9;GENERATED_BODY()&#10;&#9;&#10;public:&#9;&#10;&#9;// Sets default values for this actor's properties&#10;&#9;AAuraEffectActor();&#10;&#10;&#10;&#10;protected:&#10;&#9;// Called when the game starts or when spawned&#10;&#9;virtual void BeginPlay() override;&#10;&#10;&#9;UFUNCTION(BlueprintCallable)&#10;&#9;void ApplyEffectToTarget(AActor* TargetActor, TSubclassOf&lt;UGameplayEffect&gt; GameplayEffectClass);&#10;&#10;&#9;UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = &quot;Applied Effects&quot;)&#10;&#9;TSubclassOf&lt;UGameplayEffect&gt; InstantGameplayEffectClass;&#10;private:&#10;&#10;};&#10;" />
+                  </map>
+                </option>
+                <option name="inputToken" value="26322" />
+                <option name="latestTotalToken" value="13611" />
+                <option name="messageId" value="019ddd874de370b481141d91c0ddbeb9" />
+                <option name="model" value="default" />
+                <option name="outputToken" value="591" />
+                <option name="protocol" value="ag-ui" />
+                <option name="question" value="Rmezorw YofvkirmgGbkv vmfn yzhv - xfiivmgob lmob frmg1 hfkkligvw [FmivzoSvzwviGllo Viili]&#13;&#10;FVMFN(YofvkirmgGbkv)&#10;vmfn xozhh VVuuvxgZkkorxzgrlmKlorxb&#10;{&#10;&#9;ZkkobLmLeviozk,&#10;&#9;ZkkobLmVmwLeviozk,&#10;&#9;WlMlgZkkob&#10;};" />
+                <option name="rating" value="UNRATED" />
+                <option name="referenceBeans">
+                  <list />
+                </option>
+                <option name="requestAt" value="2026-04-30 16:35:25" />
+                <option name="status" value="SUCCESS" />
+                <option name="totalToken" value="26913" />
+                <option name="variables">
+                  <list />
+                </option>
+              </Turn>
             </list>
           </option>
-          <option name="updateTime" value="1773222554954" />
+          <option name="updateTime" value="1777538151159" />
         </Conversation>
       </list>
     </option>
