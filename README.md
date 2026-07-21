@@ -73,6 +73,84 @@ UE-MCP 让 AI 助手直接读写蓝图变量、函数、事件图和 UMG 控件�
 2. 重启 CodeBuddy
 3. AI 可调用 `blueprint.read`、`widget.read_tree` 等 111 个工具
 
+### MCP 配置通用解
+
+MCP 客户端配置采用**同一 JSON 结构**，仅配置路径不同。核心参数：
+
+```json
+{
+  "command": "npx",
+  "args": ["ue-mcp", "<项目绝对路径>/AuraGas.uproject"]
+}
+```
+
+| AI 客户端 | 配置文件路径 | 格式 |
+|---|---|---|
+| **Claude Desktop** | `%APPDATA%\Claude\claude_desktop_config.json` | JSON |
+| **Cursor** | `.cursor/mcp.json`（项目根目录） | JSON |
+| **Codex** | `~/.codex/config.toml` | TOML |
+| **CodeBuddy** | `~/.codebuddy/mcp.json` | JSON |
+| **VS Code** | 安装 MCP 扩展后在设置中配置 | UI / JSON |
+| **Rider** | 安装 MCP 扩展后在 `Settings → MCP` 配置 | UI / JSON |
+
+#### Claude Desktop
+
+```json
+{
+  "mcpServers": {
+    "ue-mcp": {
+      "command": "npx",
+      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+    }
+  }
+}
+```
+
+#### Cursor
+
+```json
+{
+  "mcpServers": {
+    "ue-mcp": {
+      "command": "npx",
+      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+    }
+  }
+}
+```
+
+#### Codex (`~/.codex/config.toml`)
+
+```toml
+[mcp_servers.ue-mcp]
+command = "npx"
+args = ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+enabled = true
+```
+
+#### CodeBuddy (`~/.codebuddy/mcp.json`)
+
+```json
+{
+  "mcpServers": {
+    "ue-mcp": {
+      "command": "npx",
+      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"],
+      "timeout": 60000
+    }
+  }
+}
+```
+
+#### VS Code / Rider
+
+在 IDE 中搜索并安装 MCP 扩展，然后添加服务器：
+- **Command**: `npx`
+- **Arguments**: `ue-mcp C:/UE/AuraGas/AuraGas.uproject`
+
+> **首次运行** `npx ue-mcp` 会自动安装 npm 包。之后每次 IDE 启动自动连接编辑器。
+> 路径必须使用**正斜杠** `/`，不支持反斜杠 `\`。
+
 ### MCP 核心工具速览
 
 | 工具 | 读/写 | 用例 |
