@@ -100,7 +100,7 @@ MCP 客户端配置采用**同一 JSON 结构**，仅配置路径不同。核心
   "mcpServers": {
     "ue-mcp": {
       "command": "npx",
-      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+      "args": ["ue-mcp", "<你的项目路径>/AuraGas.uproject"]
     }
   }
 }
@@ -113,7 +113,7 @@ MCP 客户端配置采用**同一 JSON 结构**，仅配置路径不同。核心
   "mcpServers": {
     "ue-mcp": {
       "command": "npx",
-      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+      "args": ["ue-mcp", "<你的项目路径>/AuraGas.uproject"]
     }
   }
 }
@@ -124,7 +124,7 @@ MCP 客户端配置采用**同一 JSON 结构**，仅配置路径不同。核心
 ```toml
 [mcp_servers.ue-mcp]
 command = "npx"
-args = ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"]
+args = ["ue-mcp", "<你的项目路径>/AuraGas.uproject"]
 enabled = true
 ```
 
@@ -135,7 +135,7 @@ enabled = true
   "mcpServers": {
     "ue-mcp": {
       "command": "npx",
-      "args": ["ue-mcp", "C:/UE/AuraGas/AuraGas.uproject"],
+      "args": ["ue-mcp", "<你的项目路径>/AuraGas.uproject"],
       "timeout": 60000
     }
   }
@@ -146,7 +146,7 @@ enabled = true
 
 在 IDE 中搜索并安装 MCP 扩展，然后添加服务器：
 - **Command**: `npx`
-- **Arguments**: `ue-mcp C:/UE/AuraGas/AuraGas.uproject`
+- **Arguments**: `ue-mcp <你的项目路径>/AuraGas.uproject`
 
 > **首次运行** `npx ue-mcp` 会自动安装 npm 包。之后每次 IDE 启动自动连接编辑器。
 > 路径必须使用**正斜杠** `/`，不支持反斜杠 `\`。
