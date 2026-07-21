@@ -6,12 +6,15 @@ Build
 
 .vscode
 .vs
+.vsconfig
+.idea/
 .codebuddy/
 *.VC.db
 *.opensdf
 *.opendb
 *.sdf
 *.sln
+*.slnx
 *.suo
 *.xcodeproj
 *.xcworkspace
