@@ -23,18 +23,6 @@ AAuraEnemy::AAuraEnemy()
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 }
 
-void AAuraEnemy::BeginPlay()
-{
-	// 调用父类的BeginPlay函数
-	Super::BeginPlay();
-	
-	// 检查AbilitySystemComponent是否有效（防止空指针）
-	check(AbilitySystemComponent);
-	
-	// 初始化AbilitySystemComponent，设置拥有者和化身（都是this，表示敌人自己）
-	AbilitySystemComponent->InitAbilityActorInfo(this, this);
-}
-
 void AAuraEnemy::HighlightActor()
 {
 	// 启用网格体的自定义深度渲染（用于高亮效果）
@@ -54,4 +42,22 @@ void AAuraEnemy::UnHighlightActor()
 	
 	// 关闭武器的高亮效果
 	Weapon->SetRenderCustomDepth(false);
+}
+
+void AAuraEnemy::BeginPlay()
+{
+	// 调用父类的BeginPlay函数
+	Super::BeginPlay();
+	
+	// 检查AbilitySystemComponent是否有效（防止空指针）
+	check(AbilitySystemComponent);
+
+	InitAbilityActorInfo();
+}
+
+void AAuraEnemy::InitAbilityActorInfo()
+{
+	// 初始化AbilitySystemComponent，设置拥有者和化身（都是this，表示敌人自己）
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
 }

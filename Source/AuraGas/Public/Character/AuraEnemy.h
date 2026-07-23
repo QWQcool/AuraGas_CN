@@ -23,4 +23,5 @@ public:
 	/** End of Enemy Interface */
 protected:
 	virtual void BeginPlay() override;
+	virtual void InitAbilityActorInfo() override;
 };

@@ -30,3 +30,7 @@ void AAuraCharacterBase::BeginPlay()
 	// 	Weapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("WeaponHandSocket"));
 	// }
 }
+
+void AAuraCharacterBase::InitAbilityActorInfo()
+{
+}

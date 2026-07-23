@@ -13,5 +13,9 @@ UCLASS()
 class AURAGAS_API UAuraAbilitySystemComponent : public UAbilitySystemComponent
 {
 	GENERATED_BODY()
-	
+public:
+	void AbilityActorInfoSet();
+protected:
+	// UFUNCTION(Client, Reliable)
+	void EffectApplied(UAbilitySystemComponent* AbilitySystemComponent, const FGameplayEffectSpec& EffectSpec, FActiveGameplayEffectHandle ActiveEffectHandle);
 };
