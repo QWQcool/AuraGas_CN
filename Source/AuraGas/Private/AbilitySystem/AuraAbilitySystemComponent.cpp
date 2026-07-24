@@ -15,10 +15,7 @@ void UAuraAbilitySystemComponent::EffectApplied(UAbilitySystemComponent* Ability
 	// GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, TEXT("EffectApplied"));
 	FGameplayTagContainer TagContainer;
 	EffectSpec.GetAllAssetTags(TagContainer);
-	for (const FGameplayTag& Tag : TagContainer)
-	{
-		//TODO: Broadcast the tag to the Widget Controller
-		const FString Msg = FString::Printf(TEXT("EffectApplied: %s"), *Tag.ToString());
-		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, Msg);
-	}
+
+	EffectAssetTags.Broadcast(TagContainer);
+	
 }
