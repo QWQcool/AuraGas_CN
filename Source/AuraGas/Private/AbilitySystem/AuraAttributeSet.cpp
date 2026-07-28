@@ -83,15 +83,15 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	
 	// if(Props.TargetCharacter->Implements<UCombatInterface>() && ICombatInterface::Execute_IsDead(Props.TargetCharacter)) return;
 	
-	// if (Data.EvaluatedData.Attribute == GetHealthAttribute())
-	// {
-	// 	// UE_LOG(LogTemp, Warning, TEXT("Health: %f"), GetHealth());
-	// 	SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
-	// }
-	// if (Data.EvaluatedData.Attribute == GetManaAttribute())
-	// {
-	// 	SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
-	// }
+	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Health: %f"), GetHealth());
+		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+	}
+	if (Data.EvaluatedData.Attribute == GetManaAttribute())
+	{
+		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
+	}
 	// if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
 	// {
 	// 	HandleIncomingDamage(Props);
