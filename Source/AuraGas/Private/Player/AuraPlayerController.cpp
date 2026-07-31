@@ -30,10 +30,7 @@ void AAuraPlayerController::CursorTrace()
 	if (!CursorHit.bBlockingHit)return;
 
 	LastActor = ThisActor;
-	ThisActor = CursorHit.GetActor();
-
-	IEnemyInterface* LastEnemyInterface = Cast<IEnemyInterface>(LastActor);
-	IEnemyInterface* ThisEnemyInterface = Cast<IEnemyInterface>(ThisActor);
+	ThisActor = Cast<IEnemyInterface>(CursorHit.GetActor());
 
 	/**
 	 * Line trace from cursor. There are several scanarios:
@@ -52,10 +49,10 @@ void AAuraPlayerController::CursorTrace()
 
 	if (LastActor == nullptr)
 	{
-		if (ThisActor != nullptr && ThisEnemyInterface != nullptr)
+		if (ThisActor != nullptr)
 		{
 			//Case B
-			ThisEnemyInterface->HighlightActor();
+			ThisActor->HighlightActor();
 		}
 		else
 		{
@@ -68,21 +65,21 @@ void AAuraPlayerController::CursorTrace()
 		if (ThisActor == nullptr)
 		{
 			//Case C
-			if (LastEnemyInterface != nullptr)
+			if (LastActor != nullptr)
 			{
-				LastEnemyInterface->UnHighlightActor();
+				LastActor->UnHighlightActor();
 			}
 		}
 		else if (LastActor != ThisActor)
 		{
 			//Case D
-			if (LastEnemyInterface != nullptr)
+			if (LastActor != nullptr)
 			{
-				LastEnemyInterface->UnHighlightActor();
+				LastActor->UnHighlightActor();
 			}
-			if (ThisEnemyInterface != nullptr)
+			if (ThisActor != nullptr)
 			{
-				ThisEnemyInterface->HighlightActor();
+				ThisActor->HighlightActor();
 			}
 		}
 		else if (LastActor == ThisActor)
